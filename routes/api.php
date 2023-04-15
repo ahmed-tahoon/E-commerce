@@ -17,3 +17,18 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('/product', function (){
+    return "i am get";
+});
+Route::post('/product',function (){
+    return "i am post";
+});
+Route::put('/product', function (){
+    return "i am put";
+});
+Route::patch('/product', function (){
+    return "i am patch";
+});
+Route::delete('/product', function (){
+    return "i am delete";
+});
