@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Fastkart admin is super flexible, powerful, clean &amp; modern responsive bootstrap 5 admin template with unlimited possibilities.">
+          content="Fastkart admin is super flexible, powerful, clean &amp; modern responsive bootstrap 5 admin template with unlimited possibilities.">
     <meta name="keywords"
-        content="admin template, Fastkart admin template, dashboard template, flat admin template, responsive admin template, web app">
+          content="admin template, Fastkart admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="pixelstrap">
-    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
-    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="{{asset('assets/admin/images/favicon.css')}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('assets/admin/images/favicon.css')}}" type="image/x-icon">
     <title>Fastkart - Dashboard</title>
 
     <!-- Google font-->
@@ -20,65 +20,122 @@
         rel="stylesheet">
 
     <!-- Linear Icon css -->
-    <link rel="stylesheet" href="assets/css/linearicon.css">
+    <link rel="stylesheet" href="{{asset('assets/admin/css/linearicon.css')}}">
 
     <!-- fontawesome css -->
-    <link rel="stylesheet" type="text/css" href="assets/css/vendors/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css/vendors/font-awesome.css')}}">
 
     <!-- Themify icon css-->
-    <link rel="stylesheet" type="text/css" href="assets/css/vendors/themify.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css/vendors/themify.css')}}">
 
     <!-- ratio css -->
-    <link rel="stylesheet" type="text/css" href="assets/css/ratio.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css/ratio.css')}}">
 
     <!-- remixicon css -->
-    <link rel="stylesheet" type="text/css" href="assets/css/remixicon.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css/remixicon.css')}}">
 
     <!-- Feather icon css-->
-    <link rel="stylesheet" type="text/css" href="assets/css/vendors/feather-icon.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css/vendors/feather-icon.css')}}">
 
     <!-- Plugins css -->
-    <link rel="stylesheet" type="text/css" href="assets/css/vendors/scrollbar.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/vendors/animate.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css/vendors/scrollbar.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css/vendors/animate.css')}}">
 
     <!-- Bootstrap css-->
-    <link rel="stylesheet" type="text/css" href="assets/css/vendors/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css/vendors/bootstrap.css')}}">
 
     <!-- vector map css -->
-    <link rel="stylesheet" type="text/css" href="assets/css/vector-map.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css/vector-map.css')}}">
 
     <!-- Slick Slider Css -->
-    <link rel="stylesheet" href="assets/css/vendors/slick.css">
+    <link rel="stylesheet" href="{{asset('assets/admin/css/vendors/slick.css')}}">
 
     <!-- App css -->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
-
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css/style.css')}}">
 </head>
-
-
 <body>
 
-    <div class="page-wrapper compact-wrapper" id="pageWrapper">
-        @include('Admin.includes.header')
-        <!-- Page Body Start-->
-        <div class="page-body-wrapper">
+<div class="page-wrapper compact-wrapper" id="pageWrapper">
+    @include('admin.includes.header')
+    <div class="page-body-wrapper">
 
-            @include('Admin.includes.sidebar')
-            <!-- index body start -->
-            <div class="page-body">
+    @include('admin.includes.sidebar')
+    @yield('content')
+<div>
+    @include('admin.includes.footer')
 
-
-                @yield('content')
-
+</div>
 
 
-                @include('Admin.includes.footer')
+
+<!-- Modal Start -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h5 class="modal-title" id="staticBackdropLabel">Logging Out</h5>
+                <p>Are you sure you want to log out?</p>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="button-box">
+                    <button type="button" class="btn btn--no" data-bs-dismiss="modal">No</button>
+                    <button type="button" class="btn  btn--yes btn-primary">Yes</button>
+                </div>
             </div>
-
         </div>
+    </div>
+</div>
+<!-- Modal End -->
 
-        <div>
+
+<!-- latest js -->
+<script src="{{asset('assets/admin/js/jquery-3.6.0.min.js')}}"></script>
+
+<!-- Bootstrap js -->
+<script src="{{asset('assets/admin/js/bootstrap/bootstrap.bundle.min.js')}}"></script>
+
+<!-- feather icon js -->
+<script src="{{asset('assets/admin/js/icons/feather-icon/feather.min.js')}}"></script>
+<script src="{{asset('assets/admin/js/icons/feather-icon/feather-icon.js')}}"></script>
+
+<!-- scrollbar simplebar js -->
+<script src="{{asset('assets/admin/js/scrollbar/simplebar.js')}}"></script>
+<script src="{{asset('assets/admin/js/scrollbar/custom.js')}}"></script>
+
+<!-- Sidebar jquery -->
+<script src="{{asset('assets/admin/js/config.js')}}"></script>
+
+<!-- tooltip init js -->
+<script src="{{asset('assets/admin/js/tooltip-init.js')}}"></script>
+
+<!-- Plugins JS -->
+<script src="{{asset('assets/admin/js/sidebar-menu.js')}}"></script>
+<script src="{{asset('assets/admin/js/notify/bootstrap-notify.min.js')}}"></script>
+<script src="{{asset('assets/admin/js/notify/index.js')}}"></script>
+
+<!-- Apexchar js -->
+<script src="{{asset('assets/admin/js/chart/apex-chart/apex-chart1.js')}}"></script>
+<script src="{{asset('assets/admin/js/chart/apex-chart/moment.min.js')}}"></script>
+<script src="{{asset('assets/admin/js/chart/apex-chart/apex-chart.js')}}"></script>
+<script src="{{asset('assets/admin/js/chart/apex-chart/stock-prices.js')}}"></script>
+<script src="{{asset('assets/admin/js/chart/apex-chart/chart-custom1.js')}}"></script>
+
+
+<!-- slick slider js -->
+<script src="{{asset('assets/admin/js/slick.min.js')}}"></script>
+<script src="{{asset('assets/admin/js/custom-slick.js')}}"></script>
+
+<!-- customizer js -->
+<script src="{{asset('assets/admin/js/customizer.js')}}"></script>
+
+<!-- ratio js -->
+<script src="{{asset('assets/admin/js/ratio.js')}}"></script>
+
+<!-- sidebar effect -->
+<script src="{{asset('assets/admin/js/sidebareffect.js')}}"></script>
+
+<!-- Theme js -->
+<script src="{{asset('assets/admin/js/script.js')}}"></script>
 
 </body>
 
